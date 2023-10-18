@@ -20,16 +20,15 @@ bool checkBrackets(const std::string& expression)
             if (brackets.empty()) {
                 return false;
             }
+            
             char top = brackets.top();
             brackets.pop();
+            
             if ((c == ')' && top != '(') || (c == '}' && top != '{') || (c == ']' && top != '[')) {
                 return false;
             }
         }
     }
-
-    //std::cout << "Opened: " + openedBracketsCount << std::endl;
-    //std::cout << "Closed: " + closedBracketsCount << std::endl;
 
     return brackets.empty();
 }
